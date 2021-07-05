@@ -1,0 +1,6 @@
+<select 
+[(ngModel)]="selectModel"
+[ngClass]="[(selectSize? 'form-control-'+selectSize: '') ]"
+class="form-control" (change)="onSelect.emit(selectValue())">
+    <option *ngFor="let i of options" [value]="i.val">{{i.name}}</option>
+  </select>

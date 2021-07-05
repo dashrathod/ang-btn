@@ -1,0 +1,4 @@
+<button type="button" class="mb-3 btn" [ngClass]="['btn-'+buttonClass,buttonShape,(buttonSize? 'btn-'+buttonSize: '')]"
+    (click)="btnEvent.emit(onButton())">
+    <i class="fa fa-car" [ngClass]="buttonIcon" *ngIf="buttonIcon"></i> {{buttonName}}
+</button>

@@ -1,0 +1,2 @@
+<input [type]="inputType" class="mb-3 form-control" [(ngModel)]="inputModal"
+    [ngClass]="[(inputSize? 'form-control-'+inputSize: '') ]" (input)="onInput.emit(inputValue())">

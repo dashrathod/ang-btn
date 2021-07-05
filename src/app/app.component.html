@@ -1,0 +1,241 @@
+<div class="wrapper">
+  <nav class="navbar navbar-expand-lg  navbar-expand-xl navbar-expand-md  navbar-expand-sm    navbar-light navbar-bg">
+    <a class="navbar-brand" href="#">
+      <img src="https://angular.io/assets/images/logos/angular/angular.svg" width="36" height="36" alt="">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item" (click)="componentType='button'">
+          <a class="nav-link" href="#" [ngClass]="{'white-color': componentType==='button'}">Button</a>
+        </li>
+        <li class="nav-item" (click)=" componentType='input'">
+          <a class="nav-link" href="#" [ngClass]="{'white-color': componentType==='input'}">Input</a>
+        </li>
+        <li class="nav-item" (click)="componentType='select'">
+          <a class="nav-link" href="#" [ngClass]="{'white-color': componentType==='select'}">Select</a>
+        </li>
+        <li class="nav-item" (click)="componentType='custom'">
+          <a class="nav-link" href="#" [ngClass]="{'white-color': componentType==='custom'}">Custom</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </nav>
+  <ng-container [ngSwitch]="componentType">
+    <ng-container *ngSwitchCase="'button'">
+      <div class="card">
+        <div class="card-body" [@fadeInAnimation]>
+          <h2 class="title">
+            Default Buttons
+          </h2>
+          <app-button buttonName="primary" buttonClass="primary" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonName="secondary" buttonClass="secondary" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonName="success" buttonClass="success" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonName="danger" buttonClass="danger" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonName="warning" buttonClass="warning" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonName="info" buttonClass="info" (btnEvent)="buttonValue($event)"></app-button>
+          <app-button buttonName="light" buttonClass="light" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonName="dark" buttonClass="dark" (btnEvent)="buttonValue($event)"></app-button>
+          <app-button buttonName="link" buttonClass="link" (btnEvent)="buttonValue($event)"></app-button>
+          <h2 class="title">
+            Outline Buttons
+          </h2>
+          <app-button buttonName="primary" buttonClass="outline-primary" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonName="secondary" buttonClass="outline-secondary" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonName="success" buttonClass="outline-success" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonName="danger" buttonClass="outline-danger" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonName="warning" buttonClass="outline-warning" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonName="info" buttonClass="outline-info" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonName="light" buttonClass="outline-light" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonName="dark" buttonClass="outline-dark" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonName="link" buttonClass="outline-link" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <h2 class="title">
+            Button Sizes
+          </h2>
+          <app-button buttonName="Small Button" buttonClass="primary" buttonSize="sm" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonName="Small Button" buttonClass="outline-primary" buttonSize="sm"
+            (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonName="Large Button" buttonClass="primary" buttonSize="lg" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonName="Large Button" buttonClass="outline-primary" buttonSize="lg"
+            (btnEvent)="buttonValue($event)">
+          </app-button>
+
+          <h2 class="title">
+            Rounded Button
+          </h2>
+
+          <app-button buttonShape="rounded" buttonName="primary" buttonClass="primary" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonShape="rounded" buttonName="secondary" buttonClass="secondary"
+            (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonShape="rounded" buttonName="success" buttonClass="success" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonShape="rounded" buttonName="danger" buttonClass="danger" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonShape="rounded" buttonName="warning" buttonClass="warning" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonShape="rounded" buttonName="info" buttonClass="info" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonShape="rounded" buttonName="light" buttonClass="light" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonShape="rounded" buttonName="dark" buttonClass="dark" (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonShape="rounded" buttonName="link" buttonClass="link" (btnEvent)="buttonValue($event)">
+          </app-button>
+
+          <h2 class="title">
+            Icon Button
+          </h2>
+
+          <app-button buttonIcon="fa-home" buttonShape="icon-only" buttonClass="primary"
+            (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonIcon="fa-home" buttonShape="icon-only" buttonClass="secondary"
+            (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonIcon="fa-home" buttonShape="icon-only" buttonClass="success"
+            (btnEvent)="buttonValue($event)">
+          </app-button>
+          <app-button buttonIcon="fa-home" buttonShape="icon-only" buttonClass="danger"
+            (btnEvent)="buttonValue($event)">
+          </app-button>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'input'">
+      <div class="card">
+        <div class="card-body" [@fadeInAnimation]>
+          <form>
+            <div class="form-group">
+              <label>Basic Input</label>
+              <app-input inputSize="lg" inputType="text" (onInput)="basicInput = inputValue($event)">
+              </app-input>
+              <div *ngIf="basicInput" class="alert alert-primary" role="alert">
+                {{ basicInput }}
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Large Input</label>
+              <app-input inputSize="lg" inputType="text" (onInput)="largeInput =inputValue($event)">
+              </app-input>
+              <div *ngIf="largeInput" class="alert alert-secondary" role="alert">
+                {{ largeInput }}
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Small Input</label>
+              <app-input inputSize="sm" inputType="text" (onInput)="smallInput = inputValue($event)">
+              </app-input>
+              <div *ngIf="smallInput" class="alert alert-info" role="alert">
+                {{ smallInput }}
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Input</label>
+              <app-input inputType="email" (onInput)="emailInput = inputValue($event)"></app-input>
+              <div *ngIf="emailInput" class="alert alert-success" role="alert">
+                {{ emailInput }}
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Password Input</label>
+              <app-input inputType="password" (onInput)="passwordInput = inputValue($event)">
+              </app-input>
+              <div *ngIf="passwordInput" class="alert alert-danger" role="alert">
+                {{ passwordInput }}
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'select'">
+      <div class="card">
+        <div class="card-body" [@fadeInAnimation]>
+          <form>
+            <div class="form-group">
+              <label>Basic Select</label>
+              <app-select [options]="options" (onSelect)="getSelected($event)"></app-select>
+            </div>
+
+            <div class="form-group">
+              <label>Small Select</label>
+              <app-select [options]="options" selectSize="sm" (onSelect)="getSelected($event)">
+              </app-select>
+            </div>
+            <div class="form-group">
+              <label>Large Select</label>
+              <app-select [options]="options" selectSize="lg" (onSelect)="getSelected($event)"></app-select>
+            </div>
+          </form>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'custom'">
+      <div class="card">
+        <div class="card-body" [@fadeInAnimation]>
+          <form>
+            <div class="form-group">
+              <label>Select Type</label>
+              <app-select elmType="select" [options]="elementType" (onSelect)="onSelectedType($event)"></app-select>
+            </div>
+
+            <div class="form-group">
+              <label>Select Class</label>
+              <app-select elmType="select" [options]="classList" (onSelect)="onSelectedClass($event)">
+              </app-select>
+            </div>
+
+            <div class="form-group">
+              <label>Select Size</label>
+              <app-select elmType="select" [options]="size" (onSelect)="onSelectedSize($event)"></app-select>
+            </div>
+
+            <div class="form-group" *ngIf="custom && custom.type==='button'">
+              <label>Button Name</label>
+              <app-input inputType="text" (onInput)="componentName($event)">
+              </app-input>
+            </div>
+
+            <button (click)="onGenrate()" type="submit" class="btn btn-primary">
+              Output
+            </button>
+            <ng-container *ngIf="generated">
+              <h2 class="title">
+                Genrated output
+              </h2>
+              <div class="custom-element" *ngIf="generated">
+                <app-button *ngIf="custom.type==='button'" [buttonName]="custom.name" [buttonClass]="custom.class">
+                </app-button>
+                <app-input *ngIf="custom.type==='input'" [inputSize]="custom.size">
+                </app-input>
+                <app-select *ngIf="custom.type==='select'" [selectSize]="custom.size" [options]="options"></app-select>
+              </div>
+            </ng-container>
+          </form>
+        </div>
+      </div>
+    </ng-container>
+
+  </ng-container>
+</div>

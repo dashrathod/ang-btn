@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+$fa-font-path: "../node_modules/font-awesome/fonts";
+@import "../node_modules/font-awesome/scss/font-awesome.scss";
+@import "~sweetalert2/dist/sweetalert2.min.css";
+.navbar-bg {
+    background-color: #563d7c !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #cbbde2;
+
+    &:hover {
+        color: #fff;
+    }
+}
+
+.white-color {
+    color: #fff !important;
+
+}
+.swal2-container{
+    .swal2-toast{
+        color: #28a745;
+    }
+}
